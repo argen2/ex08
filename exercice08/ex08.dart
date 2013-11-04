@@ -23,4 +23,37 @@ void main() {
   
   List resultList = createSentence(nomList, verbeList, adjectifList, adverbeList);
   print ("Phrase au hasard : ${resultList}");
+print("");
+  
+  print("Exercice 8.2 - Create a list of members of an association"); 
+  print('');
+  print('-----------------------------------------Question2-----------------------------------------'); 
+  var car = 'H';
+  
+  var association = [
+                      {'nom': 'avengers', 'description': 'Marvel Comics'},
+                      {'nom': 'redsox', 'description': 'Boston RedSox'},];
+  
+  var members = [
+                 {'associationNom' : 'avengers','nom': 'Man', 'prénom': 'Iron','courriel': 'ironman@starkindustries.com'},
+                 {'associationNom' : 'avengers','nom': 'America', 'prénom': 'Capitaine','courriel': 'cap_ame_fight.com'},
+                 {'associationNom' : 'avengers','nom': 'Hulk', 'prénom': 'The', 'courriel': 'smash@gmail.com'},
+                 {'associationNom' : 'redsox','nom': 'Ortiz', 'prénom': 'David', 'courriel': 'mvp@gmail.com'},
+                 {'associationNom' : 'redsox','nom': 'Victorino', 'prénom': 'Shayne', 'courriel': 'rightfield@hotmail.com'}];  
+  print('Liste des membres :');
+  print(members);
+  print('');
+  print('Liste des membres triés selon leurs noms:');
+  triNom(members);
+  print('');
+  print('Liste des membres triés selon leurs prénoms:');
+  triPrenom(members);
+  print('');
+  print('Liste des membres dont leurs noms commencent par $car :');
+  obtenirListeLettre(members, car);
+  
+
+
+
+
 }

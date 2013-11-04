@@ -22,3 +22,60 @@ List createSentence(List nom, List verbe, List adjectif, List adverbe) {
   
   return phrase_hasard;
 }
+triNom(var members) {  
+  List nom = new List();
+  for (var i = 0; i < members.length; i++) {
+    nom.add(members[i]['nom']);
+  }    
+  for (var i = 1; i < nom.length; i++) {
+    var x;
+    var t = new Map();
+    var j;
+    x = nom[i];
+    t = members[i];
+    j = i;
+    while (j >= 1 && nom[j - 1].compareTo(x) > 0 ) {
+      nom[j] = nom[j - 1];
+      members[j] = members[j - 1];
+      j = j - 1;      
+    }    
+    nom[j] = x;
+    members[j] = t;
+  } 
+  print(members);
+}  
+
+triPrenom(var members) {  
+  List prenom = new List();
+  for (var i = 0; i < members.length; i++) {    
+    prenom.add(members[i]['prénom']);
+  }    
+  for (var i = 1; i < prenom.length; i++) {
+    var x;
+    var t = new Map();
+    var j;
+    x = prenom[i];
+    t = members[i];
+    j = i;    
+    while (j >= 1 && prenom[j - 1].compareTo(x) > 0 ) {      
+      prenom[j] = prenom[j - 1];
+      members[j] = members[j - 1];
+      j = j - 1;      
+    }    
+    prenom[j] = x;
+    members[j] = t;
+  } 
+  print(members);  
+}  
+
+obtenirListeLettre(members, car) {  
+  List lettre = new List();  
+  for (var i = 0; i < members.length; i++) {
+    Map obtenirLettre = members[i];
+    var nom = obtenirLettre["nom"];
+    if(nom.startsWith(car)) {
+      lettre.add(obtenirLettre);
+    }
+  }  
+  print(lettre);
+}
